@@ -161,3 +161,27 @@ def fizz_buzz(n)
     ans
 end
 ```
+
+[66. Plus One](https://leetcode.com/problems/plus-one/)
+```java
+class Solution {
+    public int[] plusOne(int[] nums) {
+        for(int i = nums.length - 1; i >= 0; i--){
+            if(nums[i] == 9) {
+                nums[i] = 0;
+            }
+            else {
+                nums[i] += 1;
+                return nums;
+            }
+        }
+        if(nums[0] == 0){
+            int[] result = new int[nums.length + 1];
+            result[0] = 1;
+            return result;
+        }
+
+        return new int[0];
+    }
+}
+```
