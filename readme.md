@@ -122,3 +122,24 @@ def flip_and_invert_image(a)
     a.each.with_index{ |row, i| a[i] = row.reverse.map { |ele| ele == 1 ? 0:1 }}
 end
 ```
+
+[412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
+```java
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List<String> ans = new ArrayList();
+        for(int i = 1; i <= n; i++){
+            if(i % 3 == 0 && i % 5 == 0){
+                ans.add("FizzBuzz");
+            } else if(i % 3 == 0){
+                ans.add("Fizz");
+            } else if(i % 5 == 0){
+                ans.add("Buzz");
+            } else{
+                ans.add(String.valueOf(i));
+            }
+        }
+        return ans;
+    }
+}
+```
