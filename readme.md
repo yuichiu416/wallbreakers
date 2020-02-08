@@ -115,3 +115,10 @@ class Solution {
         }
     }
 }
+
+```ruby
+def flip_and_invert_image(a)
+    return a if a.nil? || a.empty? || a[0].empty?
+    a.each.with_index{ |row, i| a[i] = row.reverse.map { |ele| ele == 1 ? 0:1 }}
+end
+```
