@@ -52,7 +52,7 @@ def sort_array_by_parity(a)
 end
 ```
 
-[]()
+[867. Transpose Matrix](https://leetcode.com/problems/transpose-matrix/)
 ```java
 class Solution {
     public int[][] transpose(int[][] A) {
@@ -68,4 +68,17 @@ class Solution {
         return ans;
     }
 }
+```
+
+```ruby
+def transpose(a)
+    return a if a.nil? || a.length < 1 || a[0].length < 1
+    ans = Array.new(a[0].length) {Array.new(a.length)}
+    for i in 0...a.length
+        for j in 0...a[0].length
+            ans[j][i] = a[i][j]
+        end
+    end
+    ans
+end
 ```
