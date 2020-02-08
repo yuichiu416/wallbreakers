@@ -82,3 +82,36 @@ def transpose(a)
     ans
 end
 ```
+
+[832. Flipping an Image](https://leetcode.com/problems/flipping-an-image/)
+```java
+class Solution {
+    public int[][] flipAndInvertImage(int[][] A) {
+        if(A == null || A.length < 1 || A[0].length < 1){
+            return A;
+        }
+        for(int i = 0; i < A.length; i++){
+            flip(A[i]);
+            invert(A[i]);
+        }
+        return A;
+    }
+    private void flip(int[] row){
+        int left = 0, right = row.length - 1;
+        while(left < right){
+            int temp = row[left];
+            row[left++] = row[right];
+            row[right--] = temp;
+        }
+        
+    }
+    private void invert(int[] row){
+        for(int i = 0; i < row.length; i++){
+            if(row[i] == 1){
+                row[i] = 0;
+            } else{
+                row[i] = 1;
+            }
+        }
+    }
+}
