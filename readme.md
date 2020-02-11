@@ -270,6 +270,28 @@ def reverse_string(s)
 end
 ```
 
+[171. Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)
+
+```java
+class Solution {
+    public int titleToNumber(String s) {
+        if(s == null || s.length() < 1){
+            return 0;
+        }
+        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int sum = 0, multiply = 1;
+        for(int i = s.length() - 1; i >= 0; i--){
+            int index = letters.indexOf(s.charAt(i));
+            int val = (index + 1) * multiply;
+            sum += val;
+            multiply *= 26;
+        }
+        return sum;
+    }
+}
+```
+
+
 [231. Power of Two](https://leetcode.com/problems/power-of-two/)
 
 ```java
