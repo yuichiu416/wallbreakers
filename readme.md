@@ -269,3 +269,23 @@ def reverse_string(s)
     s.reverse!
 end
 ```
+
+[231. Power of Two](https://leetcode.com/problems/power-of-two/)
+
+```java
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if(n <= 0){
+            return false;
+        }
+        while(n > 1){
+            if(n % 2 != 0){
+                return false;
+            } else{
+                n /= 2;
+            }
+        }
+        return true;
+    }
+}
+```
