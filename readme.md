@@ -211,65 +211,6 @@ class Solution {
 }
 ```
 
-[520. Detect Capital](https://leetcode.com/problems/detect-capital/)
-```java
-class Solution {
-    public boolean detectCapitalUse(String word) {
-        if(word == null || word.length() < 1){
-            return true;
-        }
-        int count = 0;
-        for(int i = 0; i < word.length(); i++){
-            char c = word.charAt(i);
-            if(Character.isUpperCase(c)){
-                count++;
-            }
-        }
-        if(count == word.length() || count == 0){
-            return true; //first and second condition
-        } else if (count == 1 && Character.isUpperCase(word.charAt(0))){
-            return true; // third condition;
-        } else{
-            return false;
-        }
-        
-    }
-}
-```
-
-```ruby
-def detect_capital_use(word)
-    word == word.upcase || word == word.downcase || word == word.capitalize
-end
-```
-
-[344. Reverse String](https://leetcode.com/problems/reverse-string/)
-
-```java
-class Solution {
-    public void reverseString(char[] s) {
-        if(s == null || s.length < 1){
-            return;
-        }
-        int l = 0, r = s.length - 1;
-        while(l < r){
-            swap(s, l++, r--);
-        }
-    }
-    private void swap(char[] s, int l, int r){
-        char c = s[l];
-        s[l] = s[r];
-        s[r] = c;
-    }
-}
-```
-
-```ruby
-def reverse_string(s)
-    s.reverse!
-end
-```
-
 [171. Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)
 
 ```java
@@ -305,7 +246,6 @@ def title_to_number(s)
 end
 ```
 
-
 [231. Power of Two](https://leetcode.com/problems/power-of-two/)
 
 ```java
@@ -338,4 +278,88 @@ def is_power_of_two(n)
     end
     true
 end
+```
+
+
+[344. Reverse String](https://leetcode.com/problems/reverse-string/)
+
+```java
+class Solution {
+    public void reverseString(char[] s) {
+        if(s == null || s.length < 1){
+            return;
+        }
+        int l = 0, r = s.length - 1;
+        while(l < r){
+            swap(s, l++, r--);
+        }
+    }
+    private void swap(char[] s, int l, int r){
+        char c = s[l];
+        s[l] = s[r];
+        s[r] = c;
+    }
+}
+```
+
+```ruby
+def reverse_string(s)
+    s.reverse!
+end
+```
+
+[520. Detect Capital](https://leetcode.com/problems/detect-capital/)
+```java
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        if(word == null || word.length() < 1){
+            return true;
+        }
+        int count = 0;
+        for(int i = 0; i < word.length(); i++){
+            char c = word.charAt(i);
+            if(Character.isUpperCase(c)){
+                count++;
+            }
+        }
+        if(count == word.length() || count == 0){
+            return true; //first and second condition
+        } else if (count == 1 && Character.isUpperCase(word.charAt(0))){
+            return true; // third condition;
+        } else{
+            return false;
+        }
+        
+    }
+}
+```
+
+```ruby
+def detect_capital_use(word)
+    word == word.upcase || word == word.downcase || word == word.capitalize
+end
+```
+
+[557. Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)
+
+```java
+class Solution {
+    public String reverseWords(String s) {
+        if(s == null || s.length() <= 1){
+            return s;
+        }
+        String[] words = s.split(" ");
+        for(int i = 0; i < words.length; i++){
+            words[i] = reverse(words[i]);
+        }
+        return String.join(" ", words);
+    }
+    private String reverse(String word){
+        StringBuilder sb = new StringBuilder();
+        for( int i = word.length() - 1; i >= 0; i--){
+            sb.append(word.charAt(i));
+        }
+        return sb.toString();
+    }
+}
 ```
