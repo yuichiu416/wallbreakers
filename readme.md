@@ -445,3 +445,25 @@ class Solution {
     }
 }
 ```
+
+```ruby
+def reverse_vowels(s)
+    return s if s.nil? || s.length <= 1
+    vowels = "aeiouAEIOU"
+    l, r = 0, s.length - 1
+    while l < r
+        while l < r && !vowels.include?(s[l])
+            l += 1
+        end
+        while l < r && !vowels.include?(s[r])
+            r -= 1
+        end
+        if l >= r
+            break
+        end
+        s[l], s[r] = s[r], s[l]
+        l += 1
+        r -= 1
+    end
+    s
+end
