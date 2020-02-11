@@ -191,3 +191,22 @@ def plus_one(digits)
     (digits.join("").to_i + 1).to_s.split("").map(&:to_i)
 end
 ```
+
+[171. Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)
+
+```java
+class Solution {
+    public int titleToNumber(String s) {
+        String map = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int sum = 0;
+        int level = 1;
+        for(int i = s.length() - 1; i >= 0; i--){
+            char c = s.charAt(i);
+            int val = (map.indexOf(c) + 1) * level;
+            sum  += val;
+            level *= 26;
+        }
+        return sum;
+    }
+}
+```
