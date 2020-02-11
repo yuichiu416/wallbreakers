@@ -411,3 +411,37 @@ def is_palindrome(s)
     str == str.reverse
 end
 ```
+
+[345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
+
+```java
+class Solution {
+    public String reverseVowels(String s) {
+        if(s == null || s.length() <= 1){
+            return s;
+        }
+        char[] chars = s.toCharArray();
+        String  vowels = "aeiouAEIOU";
+        int l = 0, r = s.length() - 1;
+        while(l < r){
+            while(l < r && vowels.indexOf(s.charAt(l)) == -1){
+                l++;
+            }
+            while(l < r && vowels.indexOf(s.charAt(r)) == -1){
+                r--;
+            }
+            if(l >= r){
+                break;
+            }
+            swap(chars, l++, r--);
+        }
+        return new String(chars);
+        
+    }
+    private void swap(char[] chars, int l, int r){
+        char c = chars[l];
+        chars[l] = chars[r];
+        chars[r] = c;
+    }
+}
+```
