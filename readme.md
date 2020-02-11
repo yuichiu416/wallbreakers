@@ -291,6 +291,20 @@ class Solution {
 }
 ```
 
+```ruby
+def title_to_number(s)
+    return 0 if s.nil? || s.length == 0
+    sum, multiply = 0, 1
+    letters = ("A".."Z").to_a
+    (s.length - 1).downto(0) do |i|
+        index = letters.index(s[i])
+        sum += (index + 1) * multiply
+        multiply *= 26
+    end
+    sum
+end
+```
+
 
 [231. Power of Two](https://leetcode.com/problems/power-of-two/)
 
