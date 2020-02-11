@@ -485,3 +485,16 @@ class Solution {
     }
 }
 ```
+
+```ruby
+def longest_common_prefix(strs)
+    return "" if strs.nil? || strs.length <= 0
+    pre = strs[0]
+    for i in 0...strs.length
+        while strs[i].index(pre) != 0
+            pre = pre[0...pre.length - 1]
+        end
+    end
+    pre
+end
+```
