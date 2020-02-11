@@ -363,3 +363,9 @@ class Solution {
     }
 }
 ```
+
+```ruby
+def reverse_words(s)
+    s.split(" ").map{ |str| str.reverse}.join(" ")
+end
+```
