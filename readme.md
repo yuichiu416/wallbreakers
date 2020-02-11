@@ -369,3 +369,32 @@ def reverse_words(s)
     s.split(" ").map{ |str| str.reverse}.join(" ")
 end
 ```
+
+[125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+
+```java
+class Solution {
+    public boolean isPalindrome(String s) {
+        if(s.length() <= 1){
+            return true;
+        }
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            if(Character.isLetterOrDigit(c)){
+                sb.append(Character.toLowerCase(c));
+            }
+        }
+        return valid(sb.toString());
+    }
+    private boolean valid(String s){
+        int l = 0, r = s.length() - 1;
+        while(l < r){
+            if(s.charAt(l++) != s.charAt(r--)){
+                return false;
+            } 
+        }
+        return true;
+    }
+}
+```
