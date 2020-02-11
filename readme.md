@@ -242,3 +242,24 @@ def detect_capital_use(word)
     word == word.upcase || word == word.downcase || word == word.capitalize
 end
 ```
+
+[344. Reverse String](https://leetcode.com/problems/reverse-string/)
+
+```java
+class Solution {
+    public void reverseString(char[] s) {
+        if(s == null || s.length < 1){
+            return;
+        }
+        int l = 0, r = s.length - 1;
+        while(l < r){
+            swap(s, l++, r--);
+        }
+    }
+    private void swap(char[] s, int l, int r){
+        char c = s[l];
+        s[l] = s[r];
+        s[r] = c;
+    }
+}
+```
