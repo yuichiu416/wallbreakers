@@ -398,3 +398,16 @@ class Solution {
     }
 }
 ```
+
+```ruby
+def is_palindrome(s)
+    return true if s.nil? || s.length <= 1
+    
+    letters = ("a".."z").to_a + ("0".."9").to_a
+    str = ""
+    for i in 0...s.length
+        str += s[i].downcase if letters.include?(s[i].downcase)
+    end
+    str == str.reverse
+end
+```
