@@ -289,3 +289,17 @@ class Solution {
     }
 }
 ```
+
+```ruby
+def is_power_of_two(n)
+    return false if n <= 0
+    while n > 1
+        if n.odd?
+            return false
+        else
+            n /= 2
+        end
+    end
+    true
+end
+```
