@@ -210,3 +210,29 @@ class Solution {
     }
 }
 ```
+
+[520. Detect Capital](https://leetcode.com/problems/detect-capital/)
+```java
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        if(word == null || word.length() < 1){
+            return true;
+        }
+        int count = 0;
+        for(int i = 0; i < word.length(); i++){
+            char c = word.charAt(i);
+            if(Character.isUpperCase(c)){
+                count++;
+            }
+        }
+        if(count == word.length() || count == 0){
+            return true; //first and second condition
+        } else if (count == 1 && Character.isUpperCase(word.charAt(0))){
+            return true; // third condition;
+        } else{
+            return false;
+        }
+        
+    }
+}
+```
